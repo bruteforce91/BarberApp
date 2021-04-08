@@ -1,72 +1,61 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# BarberApp
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Software gestionale per Prenotazioni turni in sale di parrucchieri
 
-## About Laravel
+### BACKEND:LARAVEL 
+### DB:MYSQL
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+L’obiettivo del progetto è la realizzazione della base di dati di un gestionale per 
+la prenotazione turni nei saloni di parrucchieri.
+Nella prima fase è necessario produrre un insieme di documenti, che 
+costituiscono la documentazione del progetto: 
+* Analisi dei requisiti: Dati generali 
+* Schema concettuale, tramite modello E-R (strategia Top-Down)
+* Dizionario dei dati-Entità e Relazione
+* Lo schema ottenuto per ristrutturazione dalla prima fase della 
+progettazione logica
+* Schema logico finale
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Specifiche dei Dati
+Si vuole progettare una base di dati per la prenotazione turni in sale di 
+parrucchieri. Il cliente che accede al sistema è identificato dal codice fiscale e da 
+alcuni dati anagrafici, quali il nome, l’indirizzo, la città e da email e password 
+pervenuti durante la registrazione al sistema. I clienti possono essere di genere 
+maschile o femminile e devono poter effettuare la prenotazione di un turno. La 
+prenotazione è determinata dal cliente che effettua la richiesta, dalla sala, dal 
+giorno e da una fascia oraria che non potrà mai coincidere con un’altra
+prenotazione nella stessa sala e nello stesso giorno. Inoltre una prenotazione deve 
+specificare le varie tipologie di servizio (barba, capelli, tintura, piega ecc,) offerte 
+da ogni sala, le quali oltre al nome bisogna tenere traccia del costo, che varia per 
+ciascun servizio, e il prodotto utilizzato specificato dalla marca, dal costo e 
+opzionalmente dal colore. Per ogni sala inoltre si devono memorizzare la P.Iva 
+(univoca), il nome della sala, il comune di appartenenza, l’indirizzo e soprattutto 
+il genere che specifica se tratta tipologie di servizi per uomo o per donna. Ogni 
+tipologia di servizio viene effettuato dal/lla parrucchiere/a. Uno o più parrucchieri 
+lavorano all’interno di una sala.
+Ogni sala rilascia delle fatture ad ogni utente nelle quali viene riportata la data 
+e il costo del servizio effettuato.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Analisi dei Requisiti
 
-## Learning Laravel
+![image](https://user-images.githubusercontent.com/48923975/113990153-76edc900-9851-11eb-8c8a-7749d9cbf612.png)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## DATI DI CARATTERE GENERALE
+![image](https://user-images.githubusercontent.com/48923975/113990302-984eb500-9851-11eb-8579-1970b55f954d.png)
+![image](https://user-images.githubusercontent.com/48923975/113990338-a13f8680-9851-11eb-9011-dc6fe0081ef6.png)
 
-## Laravel Sponsors
+## SCHEMA ER 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+![image](https://user-images.githubusercontent.com/48923975/113990417-ba483780-9851-11eb-9996-81a5f6a69b09.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+## PROGETTAZIONE LOGICA
 
-## Contributing
+![image](https://user-images.githubusercontent.com/48923975/113990545-dba92380-9851-11eb-81ab-14534477f0aa.png)
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Immagini del progetto
+![image](https://user-images.githubusercontent.com/48923975/113990680-00050000-9852-11eb-8231-4776d78d6945.png)
+![image](https://user-images.githubusercontent.com/48923975/113990716-07c4a480-9852-11eb-8327-22d84b621e91.png)
+![image](https://user-images.githubusercontent.com/48923975/113990762-1612c080-9852-11eb-95da-51e5060e168b.png)
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
